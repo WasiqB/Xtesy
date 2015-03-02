@@ -19,6 +19,29 @@ public final class Strings {
 
 	/**
 	 * @author Wasiq B
+	 * @since 01-Mar-2015 1:57:50 pm
+	 * @param value
+	 * @return
+	 */
+	public static boolean isNumeric (final String value) {
+		final char [] vals = value.toCharArray ();
+		boolean valid = true;
+		boolean isDot = false;
+		for (int index = 0; index < vals.length && valid; index++) {
+			final char c = vals [index];
+			if (index == 0 && (c == '-' || c == '+')) continue;
+			if (c >= '0' && c <= '9') continue;
+			if (!isDot && c == '.') {
+				isDot = true;
+				continue;
+			}
+			valid = false;
+		}
+		return valid;
+	}
+
+	/**
+	 * @author Wasiq B
 	 * @since 19-Nov-2014 9:40:39 pm
 	 * @param value
 	 * @param position
