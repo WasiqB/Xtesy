@@ -10,6 +10,7 @@ public enum TestCaseConstants {
 	TEST_EXECUTE ("testExecute"),
 	TEST_ID ("testId"),
 	TEST_NAME ("testName"),
+	TEST_PARAMS ("testParams"),
 	TEST_RUN_FROM ("testRunFrom"),
 	TEST_RUN_TO ("testRunTo");
 

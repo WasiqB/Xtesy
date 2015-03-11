@@ -31,6 +31,7 @@ public final class ExcelReader {
 	 * @throws IOException
 	 */
 	private ExcelReader (final String path) throws IOException {
+		this ();
 		final File file = new File (path);
 		reader = new FileInputStream (file);
 		final String extension = path.substring (path.lastIndexOf ("."));
@@ -84,11 +85,10 @@ public final class ExcelReader {
 						final String condValue = condition.getFieldValue (column);
 						if (value.equalsIgnoreCase (condValue)) {
 							param.setFieldValue (column, value);
-							continue;
 						}
 					}
 				}
-				param.setFieldValue (column, value);
+				else param.setFieldValue (column, value);
 			}
 		return param;
 	}
