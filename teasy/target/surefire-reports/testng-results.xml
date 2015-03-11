@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="0" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="com.wizonsoft.teasy.utils.lang.TestStrings" duration-ms="7" started-at="2015-03-08T08:59:18Z" finished-at="2015-03-08T08:59:18Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="7" started-at="2015-03-08T08:59:18Z" finished-at="2015-03-08T08:59:18Z">
+    </test> <!-- Command line test -->
+  </suite> <!-- com.wizonsoft.teasy.utils.lang.TestStrings -->
+</testng-results>
