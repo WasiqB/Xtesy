@@ -8,6 +8,7 @@ import java.lang.annotation.*;
  */
 @Target (ElementType.FIELD)
 @Retention (RetentionPolicy.RUNTIME)
+@Deprecated
 public @interface XmlAttribute {
 	/**
 	 * @author Wasiq B
