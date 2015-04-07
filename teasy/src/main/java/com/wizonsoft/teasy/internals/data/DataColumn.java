@@ -1,14 +1,23 @@
 package com.wizonsoft.teasy.internals.data;
 
-import com.wizonsoft.teasy.data.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.wizonsoft.teasy.data.IDataColumn;
+import com.wizonsoft.teasy.data.IDataVariable;
 
 /**
  * @author Wasiq B
  * @since 18-Jan-2015 8:02:45 pm
  */
 public class DataColumn <T> implements IDataColumn {
+	private static Logger		log;
 	private final T				value;
 	private final IDataVariable	variable;
+
+	static {
+		log = LogManager.getLogger (DataColumn.class);
+	}
 
 	/**
 	 * @author Wasiq B
@@ -17,8 +26,10 @@ public class DataColumn <T> implements IDataColumn {
 	 * @param value
 	 */
 	public DataColumn (final IDataVariable variable, final T value) {
+		log.entry ();
 		this.variable = variable;
 		this.value = value;
+		log.exit ();
 	}
 
 	/*
@@ -28,7 +39,8 @@ public class DataColumn <T> implements IDataColumn {
 	@SuppressWarnings ("unchecked")
 	@Override
 	public T getValue () {
-		return this.value;
+		log.entry ();
+		return log.exit (this.value);
 	}
 
 	/*
@@ -37,6 +49,7 @@ public class DataColumn <T> implements IDataColumn {
 	 */
 	@Override
 	public IDataVariable getVariable () {
-		return this.variable;
+		log.entry ();
+		return log.exit (this.variable);
 	}
 }

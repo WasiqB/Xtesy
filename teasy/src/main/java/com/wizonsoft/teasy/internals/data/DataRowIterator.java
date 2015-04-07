@@ -1,22 +1,33 @@
 package com.wizonsoft.teasy.internals.data;
 
-import com.wizonsoft.teasy.data.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.wizonsoft.teasy.data.IDataRow;
+import com.wizonsoft.teasy.data.IDataRowIterator;
 
 /**
  * @author Wasiq B
  * @since 24-Jan-2015 7:53:45 pm
  */
 public class DataRowIterator implements IDataRowIterator {
+	private static Logger		log;
 	private int					index;
 	private final IDataRow []	rows;
+
+	static {
+		log = LogManager.getLogger (DataRowIterator.class);
+	}
 
 	/**
 	 * @author Wasiq B
 	 * @since 24-Jan-2015 7:53:45 pm
 	 */
 	public DataRowIterator (final IDataRow [] rows) {
+		log.entry ();
 		this.rows = rows;
 		reset ();
+		log.exit ();
 	}
 
 	/*
@@ -25,7 +36,8 @@ public class DataRowIterator implements IDataRowIterator {
 	 */
 	@Override
 	public IDataRow current () {
-		return this.rows [this.index];
+		log.entry ();
+		return log.exit (this.rows [this.index]);
 	}
 
 	/*
@@ -34,7 +46,8 @@ public class DataRowIterator implements IDataRowIterator {
 	 */
 	@Override
 	public <T> T getValue (final int variableIndex) {
-		return current ().getColumn (variableIndex).getValue ();
+		log.entry ();
+		return log.exit (current ().getColumn (variableIndex).getValue ());
 	}
 
 	/*
@@ -43,7 +56,8 @@ public class DataRowIterator implements IDataRowIterator {
 	 */
 	@Override
 	public <T> T getValue (final String variableName) {
-		return current ().getColumn (variableName).getValue ();
+		log.entry ();
+		return log.exit (current ().getColumn (variableName).getValue ());
 	}
 
 	/*
@@ -52,7 +66,8 @@ public class DataRowIterator implements IDataRowIterator {
 	 */
 	@Override
 	public boolean hasNext () {
-		return this.index < this.rows.length - 1;
+		log.entry ();
+		return log.exit (this.index < this.rows.length - 1);
 	}
 
 	/*
@@ -61,7 +76,9 @@ public class DataRowIterator implements IDataRowIterator {
 	 */
 	@Override
 	public void next () {
+		log.entry ();
 		this.index++;
+		log.exit ();
 	}
 
 	/*
@@ -70,6 +87,8 @@ public class DataRowIterator implements IDataRowIterator {
 	 */
 	@Override
 	public void reset () {
+		log.entry ();
 		this.index = 0;
+		log.exit ();
 	}
 }

@@ -4,6 +4,7 @@ package com.wizonsoft.teasy.data;
  * @author Wasiq B
  * @since 18-Jan-2015 6:54:39 pm
  */
+@Deprecated
 public final class ConnectionDetails {
 	private String	database;
 	private String	driver;

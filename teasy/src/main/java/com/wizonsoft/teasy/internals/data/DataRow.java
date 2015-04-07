@@ -1,22 +1,34 @@
 package com.wizonsoft.teasy.internals.data;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.wizonsoft.teasy.data.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.wizonsoft.teasy.data.IDataColumn;
+import com.wizonsoft.teasy.data.IDataRow;
 
 /**
  * @author Wasiq B
  * @since 18-Jan-2015 7:42:52 pm
  */
 public class DataRow implements IDataRow {
+	private static Logger				log;
 	private final List <IDataColumn>	columns;
+
+	static {
+		log = LogManager.getLogger (DataRow.class);
+	}
 
 	/**
 	 * @author Wasiq B
 	 * @since 18-Jan-2015 7:42:52 pm
 	 */
 	public DataRow () {
+		log.entry ();
 		this.columns = new ArrayList <> ();
+		log.exit ();
 	}
 
 	/**
@@ -26,7 +38,9 @@ public class DataRow implements IDataRow {
 	 */
 	@Override
 	public void addColumn (final IDataColumn column) {
+		log.entry ();
 		this.columns.add (column);
+		log.exit ();
 	}
 
 	/*
@@ -35,7 +49,9 @@ public class DataRow implements IDataRow {
 	 */
 	@Override
 	public void clear () {
+		log.entry ();
 		this.columns.clear ();
+		log.exit ();
 	}
 
 	/*
@@ -44,10 +60,15 @@ public class DataRow implements IDataRow {
 	 */
 	@Override
 	public IDataColumn getColumn (final int variableIndex) {
+		log.entry ();
+		IDataColumn col = null;
 		for (final IDataColumn column : this.columns) {
-			if (column.getVariable ().getIndex () == variableIndex) return column;
+			if (column.getVariable ().getIndex () == variableIndex) {
+				col = column;
+				break;
+			}
 		}
-		return null;
+		return log.exit (col);
 	}
 
 	/*
@@ -56,10 +77,15 @@ public class DataRow implements IDataRow {
 	 */
 	@Override
 	public IDataColumn getColumn (final String variableName) {
+		log.entry ();
+		IDataColumn col = null;
 		for (final IDataColumn column : this.columns) {
-			if (column.getVariable ().getName ().equals (variableName)) return column;
+			if (column.getVariable ().getName ().equals (variableName)) {
+				col = column;
+				break;
+			}
 		}
-		return null;
+		return log.exit (col);
 	}
 
 	/*
@@ -68,7 +94,8 @@ public class DataRow implements IDataRow {
 	 */
 	@Override
 	public int getColumnCount () {
-		return this.columns.size ();
+		log.entry ();
+		return log.exit (this.columns.size ());
 	}
 
 	/*
@@ -77,7 +104,8 @@ public class DataRow implements IDataRow {
 	 */
 	@Override
 	public int getColumnIndex (final String variableName) {
-		return this.columns.indexOf (variableName) + 1;
+		log.entry ();
+		return log.exit (this.columns.indexOf (variableName) + 1);
 	}
 
 	/*
@@ -86,7 +114,8 @@ public class DataRow implements IDataRow {
 	 */
 	@Override
 	public IDataColumn [] getColumns () {
+		log.entry ();
 		final IDataColumn [] cols = new IDataColumn [getColumnCount ()];
-		return this.columns.toArray (cols);
+		return log.exit (this.columns.toArray (cols));
 	}
 }

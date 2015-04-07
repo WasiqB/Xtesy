@@ -1,5 +1,8 @@
 package com.wizonsoft.teasy.internals.data;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.wizonsoft.teasy.data.IDataVariable;
 
 /**
@@ -7,8 +10,13 @@ import com.wizonsoft.teasy.data.IDataVariable;
  * @since 18-Jan-2015 8:01:01 pm
  */
 public class DataVariable implements IDataVariable {
+	private static Logger	log;
 	private final int		index;
 	private final String	name;
+
+	static {
+		log = LogManager.getLogger (DataVariable.class);
+	}
 
 	/**
 	 * @author Wasiq B
@@ -17,8 +25,10 @@ public class DataVariable implements IDataVariable {
 	 * @param index
 	 */
 	public DataVariable (final String name, final int index) {
+		log.entry ();
 		this.name = name;
 		this.index = index;
+		log.exit ();
 	}
 
 	/*
@@ -27,7 +37,8 @@ public class DataVariable implements IDataVariable {
 	 */
 	@Override
 	public int getIndex () {
-		return this.index;
+		log.entry ();
+		return log.exit (this.index);
 	}
 
 	/*
@@ -36,6 +47,7 @@ public class DataVariable implements IDataVariable {
 	 */
 	@Override
 	public String getName () {
-		return this.name;
+		log.entry ();
+		return log.exit (this.name);
 	}
 }

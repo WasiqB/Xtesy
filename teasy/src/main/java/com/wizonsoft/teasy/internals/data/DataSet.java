@@ -1,23 +1,36 @@
 package com.wizonsoft.teasy.internals.data;
 
 import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.wizonsoft.teasy.data.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.wizonsoft.teasy.data.IDataSet;
+import com.wizonsoft.teasy.data.IDataTable;
+import com.wizonsoft.teasy.data.IDataTableIterator;
 
 /**
  * @author Wasiq B
  * @since 24-Jan-2015 1:54:05 pm
  */
 public class DataSet implements IDataSet {
+	private static Logger			log;
 	private final List <IDataTable>	tables;
+
+	static {
+		log = LogManager.getLogger (DataSet.class);
+	}
 
 	/**
 	 * @author Wasiq B
 	 * @since 24-Jan-2015 1:54:05 pm
 	 */
 	public DataSet () {
+		log.entry ();
 		this.tables = new ArrayList <IDataTable> ();
+		log.exit ();
 	}
 
 	/*
@@ -27,7 +40,9 @@ public class DataSet implements IDataSet {
 	 */
 	@Override
 	public void addTable (final IDataTable table) {
+		log.entry ();
 		this.tables.add (table);
+		log.exit ();
 	}
 
 	/*
@@ -36,7 +51,9 @@ public class DataSet implements IDataSet {
 	 */
 	@Override
 	public void clear () {
+		log.entry ();
 		this.tables.clear ();
+		log.exit ();
 	}
 
 	/*
@@ -45,9 +62,13 @@ public class DataSet implements IDataSet {
 	 */
 	@Override
 	public IDataTable getTable (final String tableName) throws SQLException {
+		log.entry ();
+		IDataTable t = null;
 		for (final IDataTable table : this.tables)
-			if (table.getTableName ().equals (tableName)) return table;
-		return null;
+			if (table.getTableName ().equals (tableName)) {
+				t = table;
+			}
+		return log.exit (t);
 	}
 
 	/*
@@ -56,7 +77,8 @@ public class DataSet implements IDataSet {
 	 */
 	@Override
 	public IDataTableIterator getTableIterator () {
-		return new DataTableIterator (this);
+		log.entry ();
+		return log.exit (new DataTableIterator (this));
 	}
 
 	/*
@@ -65,12 +87,13 @@ public class DataSet implements IDataSet {
 	 */
 	@Override
 	public String [] getTableNames () throws SQLException {
+		log.entry ();
 		final String [] names = new String [this.tables.size ()];
 		int index = 0;
 		for (final IDataTable table : this.tables) {
 			names [index++] = table.getTableName ();
 		}
-		return names;
+		return log.exit (names);
 	}
 
 	/*
@@ -79,7 +102,8 @@ public class DataSet implements IDataSet {
 	 */
 	@Override
 	public IDataTable [] getTables () {
+		log.entry ();
 		final IDataTable [] t = new IDataTable [this.tables.size ()];
-		return this.tables.toArray (t);
+		return log.exit (this.tables.toArray (t));
 	}
 }

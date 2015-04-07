@@ -1,15 +1,25 @@
 package com.wizonsoft.teasy.internals.data;
 
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import com.wizonsoft.teasy.data.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.wizonsoft.teasy.data.IDataSet;
+import com.wizonsoft.teasy.data.IDataTable;
 
 /**
  * @author Wasiq B
  * @since 18-Jan-2015 7:20:55 pm
  */
 public class ResultSetHelper {
+	private static Logger	log;
 	private final IDataSet	ds;
+
+	static {
+		log = LogManager.getLogger (ResultSetHelper.class);
+	}
 
 	/**
 	 * @author Wasiq B
@@ -17,7 +27,9 @@ public class ResultSetHelper {
 	 * @since 18-Jan-2015 7:20:55 pm
 	 */
 	public ResultSetHelper () {
+		log.entry ();
 		this.ds = new DataSet ();
+		log.exit ();
 	}
 
 	/**
@@ -27,7 +39,9 @@ public class ResultSetHelper {
 	 * @throws SQLException
 	 */
 	public void addResultSet (final ResultSet rs) throws SQLException {
+		log.entry ();
 		this.ds.addTable (new DataTable (rs));
+		log.exit ();
 	}
 
 	/**
@@ -36,7 +50,8 @@ public class ResultSetHelper {
 	 * @return
 	 */
 	public IDataSet getDataSet () {
-		return this.ds;
+		log.entry ();
+		return log.exit (this.ds);
 	}
 
 	/**
@@ -47,6 +62,7 @@ public class ResultSetHelper {
 	 * @throws SQLException
 	 */
 	public IDataTable getTable (final String tableName) throws SQLException {
-		return this.ds.getTable (tableName);
+		log.entry ();
+		return log.exit (this.ds.getTable (tableName));
 	}
 }

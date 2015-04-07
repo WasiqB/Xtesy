@@ -1,22 +1,34 @@
 package com.wizonsoft.teasy.internals.data;
 
-import com.wizonsoft.teasy.data.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.wizonsoft.teasy.data.IDataSet;
+import com.wizonsoft.teasy.data.IDataTable;
+import com.wizonsoft.teasy.data.IDataTableIterator;
 
 /**
  * @author Wasiq B
  * @since 24-Jan-2015 3:28:33 pm
  */
 public class DataTableIterator implements IDataTableIterator {
+	private static Logger		log;
 	private int					index;
 	private final IDataTable []	tables;
+
+	static {
+		log = LogManager.getLogger (DataTableIterator.class);
+	}
 
 	/**
 	 * @author Wasiq B
 	 * @since 24-Jan-2015 3:28:33 pm
 	 */
 	public DataTableIterator (final IDataSet ds) {
+		log.entry ();
 		reset ();
 		this.tables = ds.getTables ();
+		log.exit ();
 	}
 
 	/*
@@ -25,7 +37,8 @@ public class DataTableIterator implements IDataTableIterator {
 	 */
 	@Override
 	public IDataTable current () {
-		return this.tables [this.index];
+		log.entry ();
+		return log.exit (this.tables [this.index]);
 	}
 
 	/*
@@ -34,7 +47,8 @@ public class DataTableIterator implements IDataTableIterator {
 	 */
 	@Override
 	public boolean hasNext () {
-		return this.index < this.tables.length - 1;
+		log.entry ();
+		return log.exit (this.index < this.tables.length - 1);
 	}
 
 	/*
@@ -43,7 +57,9 @@ public class DataTableIterator implements IDataTableIterator {
 	 */
 	@Override
 	public void next () {
+		log.entry ();
 		this.index++;
+		log.exit ();
 	}
 
 	/*
@@ -52,6 +68,8 @@ public class DataTableIterator implements IDataTableIterator {
 	 */
 	@Override
 	public void reset () {
+		log.entry ();
 		this.index = 0;
+		log.exit ();
 	}
 }
