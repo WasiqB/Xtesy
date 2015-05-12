@@ -1,4 +1,4 @@
-package com.wizonsoft.xtesy.data;
+package com.wizonsoft.xtesy.core.data;
 
 import java.sql.SQLException;
 
