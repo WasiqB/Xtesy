@@ -1,4 +1,4 @@
-package com.wizonsoft.xtesy.data;
+package com.wizonsoft.xtesy.core.data;
 
 import static com.wizonsoft.xtesy.utils.lang.Strings.isNullOrEmpty;
 import static java.sql.DriverManager.getConnection;

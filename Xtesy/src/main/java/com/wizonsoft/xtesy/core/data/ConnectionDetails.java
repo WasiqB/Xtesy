@@ -1,4 +1,4 @@
-package com.wizonsoft.xtesy.data;
+package com.wizonsoft.xtesy.core.data;
 
 /**
  * @author Wasiq B
