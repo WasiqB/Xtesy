@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.wizonsoft.xtesy.core.data.IDataTableExt;
-import com.wizonsoft.xtesy.internals.data.DataTable;
+import com.wizonsoft.xtesy.core.internals.data.DataTable;
 
 /**
  * @author Wasiq B

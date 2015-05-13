@@ -5,7 +5,7 @@ import static java.sql.DriverManager.getConnection;
 
 import java.sql.*;
 
-import com.wizonsoft.xtesy.internals.data.ResultSetHelper;
+import com.wizonsoft.xtesy.core.internals.data.ResultSetHelper;
 
 /**
  * @author Wasiq B

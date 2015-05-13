@@ -14,9 +14,9 @@ import com.wizonsoft.xtesy.core.data.IDataRow;
 import com.wizonsoft.xtesy.core.data.IDataRowIterator;
 import com.wizonsoft.xtesy.core.data.IDataTable;
 import com.wizonsoft.xtesy.core.data.IDataVariable;
-import com.wizonsoft.xtesy.internals.data.DataColumn;
-import com.wizonsoft.xtesy.internals.data.DataRow;
-import com.wizonsoft.xtesy.internals.data.DataVariable;
+import com.wizonsoft.xtesy.core.internals.data.DataColumn;
+import com.wizonsoft.xtesy.core.internals.data.DataRow;
+import com.wizonsoft.xtesy.core.internals.data.DataVariable;
 
 /**
  * @author Wasiq B
