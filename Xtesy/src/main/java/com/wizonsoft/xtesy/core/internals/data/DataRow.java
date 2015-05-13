@@ -1,4 +1,4 @@
-package com.wizonsoft.xtesy.internals.data;
+package com.wizonsoft.xtesy.core.internals.data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.wizonsoft.xtesy.data.IDataColumn;
-import com.wizonsoft.xtesy.data.IDataRow;
+import com.wizonsoft.xtesy.core.data.IDataColumn;
+import com.wizonsoft.xtesy.core.data.IDataRow;
 
 /**
  * @author Wasiq B

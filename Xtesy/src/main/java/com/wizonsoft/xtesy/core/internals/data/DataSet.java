@@ -1,4 +1,4 @@
-package com.wizonsoft.xtesy.internals.data;
+package com.wizonsoft.xtesy.core.internals.data;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -7,9 +7,9 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.wizonsoft.xtesy.data.IDataSet;
-import com.wizonsoft.xtesy.data.IDataTable;
-import com.wizonsoft.xtesy.data.IDataTableIterator;
+import com.wizonsoft.xtesy.core.data.IDataSet;
+import com.wizonsoft.xtesy.core.data.IDataTable;
+import com.wizonsoft.xtesy.core.data.IDataTableIterator;
 
 /**
  * @author Wasiq B

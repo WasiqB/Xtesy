@@ -1,10 +1,10 @@
-package com.wizonsoft.xtesy.internals.data;
+package com.wizonsoft.xtesy.core.internals.data;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.wizonsoft.xtesy.data.IDataColumn;
-import com.wizonsoft.xtesy.data.IDataVariable;
+import com.wizonsoft.xtesy.core.data.IDataColumn;
+import com.wizonsoft.xtesy.core.data.IDataVariable;
 
 /**
  * @author Wasiq B
