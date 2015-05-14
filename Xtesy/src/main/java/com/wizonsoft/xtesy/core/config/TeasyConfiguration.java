@@ -1,4 +1,4 @@
-package com.wizonsoft.xtesy.config;
+package com.wizonsoft.xtesy.core.config;
 
 import static com.wizonsoft.xtesy.constants.PropertyConstants.PROPERTIES_FILE;
 
@@ -12,12 +12,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.wizonsoft.xtesy.constants.PropertyConstants;
-import com.wizonsoft.xtesy.utils.lang.Strings;
+import com.wizonsoft.xtesy.core.utils.Strings;
 
 /**
  * @author Wasiq B
  * @since 08-Mar-2015 9:38:10 pm
  */
+@Deprecated
 public class TeasyConfiguration {
 	private static Logger		log;
 	private static Properties	prop;
