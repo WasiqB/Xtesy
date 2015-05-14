@@ -1,11 +1,11 @@
-package com.wizonsoft.xtesy.data;
+package com.wizonsoft.xtesy.core.data;
 
 import static com.wizonsoft.xtesy.utils.lang.Strings.isNullOrEmpty;
 import static java.sql.DriverManager.getConnection;
 
 import java.sql.*;
 
-import com.wizonsoft.xtesy.internals.data.ResultSetHelper;
+import com.wizonsoft.xtesy.core.internals.data.ResultSetHelper;
 
 /**
  * @author Wasiq B

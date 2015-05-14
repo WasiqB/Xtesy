@@ -1,10 +1,10 @@
-package com.wizonsoft.xtesy.internals.data;
+package com.wizonsoft.xtesy.core.internals.data;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.wizonsoft.xtesy.data.IDataRow;
-import com.wizonsoft.xtesy.data.IDataRowIterator;
+import com.wizonsoft.xtesy.core.data.IDataRow;
+import com.wizonsoft.xtesy.core.data.IDataRowIterator;
 
 /**
  * @author Wasiq B
