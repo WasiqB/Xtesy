@@ -1,4 +1,4 @@
-package com.wizonsoft.xtesy.internals.testng;
+package com.wizonsoft.xtesy.core.internals.testng;
 
 import java.util.Map;
 

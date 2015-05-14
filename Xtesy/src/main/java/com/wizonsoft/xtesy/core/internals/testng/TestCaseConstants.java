@@ -1,4 +1,4 @@
-package com.wizonsoft.xtesy.internals.testng;
+package com.wizonsoft.xtesy.core.internals.testng;
 
 /**
  * @author Wasiq B

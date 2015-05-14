@@ -1,4 +1,4 @@
-package com.wizonsoft.xtesy.utils.lang;
+package com.wizonsoft.xtesy.core.utils;
 
 import java.math.*;
 

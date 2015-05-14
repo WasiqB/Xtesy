@@ -1,7 +1,7 @@
-package com.wizonsoft.xtesy.internals.testng;
+package com.wizonsoft.xtesy.core.internals.testng;
 
-import static com.wizonsoft.xtesy.internals.testng.TestCaseConstants.*;
-import static com.wizonsoft.xtesy.utils.lang.Booleans.toStringFromBoolean;
+import static com.wizonsoft.xtesy.core.internals.testng.TestCaseConstants.*;
+import static com.wizonsoft.xtesy.core.utils.Booleans.toStringFromBoolean;
 
 import java.util.*;
 
