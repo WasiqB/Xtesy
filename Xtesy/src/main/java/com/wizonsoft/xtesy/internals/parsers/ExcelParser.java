@@ -4,7 +4,7 @@ import java.util.*;
 
 import org.testng.xml.XmlSuite;
 
-import com.wizonsoft.xtesy.internals.testng.TestCaseConstants;
+import com.wizonsoft.xtesy.core.internals.testng.TestCaseConstants;
 
 /**
  * @author Wasiq B

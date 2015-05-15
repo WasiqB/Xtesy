@@ -3,7 +3,7 @@ package com.wizonsoft.xtesy.constants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.wizonsoft.xtesy.config.TeasyConfiguration;
+import com.wizonsoft.xtesy.core.config.TeasyConfiguration;
 
 /**
  * @author Wasiq B

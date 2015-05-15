@@ -1,9 +1,14 @@
 package com.wizonsoft.xtesy.core.data;
 
-import static com.wizonsoft.xtesy.utils.lang.Strings.isNullOrEmpty;
+import static com.wizonsoft.xtesy.core.utils.Strings.isNullOrEmpty;
 import static java.sql.DriverManager.getConnection;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import com.wizonsoft.xtesy.core.internals.data.ResultSetHelper;
 

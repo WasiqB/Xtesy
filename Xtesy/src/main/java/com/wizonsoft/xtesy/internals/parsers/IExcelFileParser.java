@@ -2,7 +2,7 @@ package com.wizonsoft.xtesy.internals.parsers;
 
 import java.util.Map;
 
-import com.wizonsoft.xtesy.internals.testng.TestCaseConstants;
+import com.wizonsoft.xtesy.core.internals.testng.TestCaseConstants;
 
 /**
  * @author Wasiq B

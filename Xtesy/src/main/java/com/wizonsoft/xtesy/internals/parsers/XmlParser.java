@@ -1,6 +1,6 @@
 package com.wizonsoft.xtesy.internals.parsers;
 
-import static com.wizonsoft.xtesy.utils.lang.Strings.isNullOrEmpty;
+import static com.wizonsoft.xtesy.core.utils.Strings.isNullOrEmpty;
 
 import java.lang.reflect.Field;
 

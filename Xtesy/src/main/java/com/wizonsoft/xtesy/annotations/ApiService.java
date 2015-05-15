@@ -2,7 +2,7 @@ package com.wizonsoft.xtesy.annotations;
 
 import java.lang.annotation.*;
 
-import com.wizonsoft.xtesy.utils.lang.Strings;
+import com.wizonsoft.xtesy.core.utils.Strings;
 
 /**
  * @author Wasiq B
